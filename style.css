@@ -1,0 +1,369 @@
+/*FONT Import*/
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+/*CSS RESET*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*BASIC TEXT STYLING*/
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+}
+p {
+    font-size: 1.6rem;
+    color: #7a2e2e;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #7a2e2e;
+    padding-inline: 5%;
+}
+h2 {
+    font-size: 3rem;
+    color: #7a2e2e;
+}
+h3 {
+    font-size: 2rem;
+    color: #7a2e2e;
+}
+.mono {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title {
+    font-size: 10rem;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    background-color: #fbfe75;
+}
+/*LANDING PAGE*/
+/* Top yellow navigation bar */
+.navbar {
+    width: 100%;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #7a2e2e;
+}
+/*Landing page - second bar*/
+.weather {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #7a2e2e;
+}
+/*Landing page - Pop up message*/
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+/*Landing page - Pop up message format/spacing */
+.popup-box {
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.popup-box p {
+    padding: 0.5rem;
+}
+
+/*Landing page - background image*/
+.garden {
+    position: relative;
+    background-image: url("images/garden.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    height: 100vh;
+    max-height: 100%;
+}
+/*Landing page - heading text*/
+.garden h1 {
+    display: grid;
+    height: 100vh;
+}
+/*Landing page - flower button*/
+.flower-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*position values for image*/
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+/*Landing page - Spin animation for flower*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    100% {
+        transform: rotate(7200deg) scale(4);
+    }
+}
+
+.spinflower {
+    animation-name: spin;
+    animation-duration: 3s;
+    display: block;
+}
+/*Landing page - flower image and text aligment css*/
+.flower-button img,
+.press-here {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.flower-button img {
+    max-height: 70vh;
+    max-width: 70vw;
+    height: auto;
+}
+.press-here {
+    color: yellow;
+    z-index: 10;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid yellow;
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+/*PROFILE SECTION*/
+/*Text and alignment*/
+.profile-bar {
+    height: 400px;
+    text-align: center;
+    align-content: center;
+}
+.profile-bar h1 {
+    font-weight: normal;
+    color: #7a2e2e;
+    margin-bottom: 40px;
+    text-align: center;
+    align-content: center;
+}
+
+/* Profile section - Grid layout centered*/
+.profile-grid {
+    display: grid;
+    align-items: center;
+}
+.profile-grid img {
+    place-items: center;
+    align-content: center;
+}
+
+/* Profile section - Profile cards */
+.profile-card {
+    background-color: #fbfe75;
+    padding: 4rem;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    box-shadow: 0 0 0 2px #bc2f2f;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Profile section - click anywhere on profile*/
+.open-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+/* Profile section - profile card image*/
+.profile-card img {
+    width: 200px;
+    /*height: 100px;*/
+    object-fit: contain;
+    margin: 15px 0;
+}
+/*Profile section - profile card labels*/
+.profile-card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: inherit;
+    font-weight: bold;
+}
+
+.profile-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.profile-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2rem;
+}
+/*Landing page - References*/
+.references {
+    text-align: left;
+    padding: 2rem;
+}
+
+.references li {
+    text-align: left;
+    font-size: 1.6rem;
+}
+.references h3 {
+    padding-bottom: 1rem;
+}
+
+/*SUBPAGE*/
+/*Text css for title*/
+
+.title-section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    padding-bottom: 10rem;
+    border-bottom: 1px solid #7a2e2e;
+    text-align: center;
+}
+.title-section h1 {
+    text-transform: uppercase;
+}
+/*Subpage - main image*/
+.title-section img {
+    max-height: 70vh;
+    max-width: 70vw;
+    height: auto;
+    position: center;
+    padding: 4rem;
+}
+
+/*Subpage - main text format*/
+.body {
+    display: grid;
+    align-content: center;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    max-width: 800px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.body h2 {
+    padding: 3rem;
+    align-content: center;
+    text-align: center;
+}
+
+.body div {
+    padding: 3rem;
+}
+/*Subpage - Navigation grid layout*/
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #7a2e2e;
+}
+.navigation div:first-child {
+    border-right: 1px solid #7a2e2e;
+}
+.nav-item {
+    padding: 4rem;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+
+    position: relative;
+    height: 100%;
+}
+.nav-arrow {
+    font-size: 2rem;
+    color: #7a2e2e;
+}
+.nav-item p {
+    font-size: 1.6rem;
+}
+.nav-item img {
+    width: 8rem;
+}
+/*Subpage - Footer banner format*/
+.footer {
+    background-image: url(images/garden.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20vh 0 20vh 0;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+}
+.footer img {
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85;
+    width: 100%;
+    height: 20rem;
+}
+/*END OF SUBPAGE*/
+
+/*MEDIA QUERY*/
+/*Small screens*/
+@media screen and (min-width: 600px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+}
+/*Wider screens*/
+@media screen and (min-width: 900px) {
+    .profile-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
